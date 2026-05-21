@@ -90,7 +90,7 @@ def get_parcels():
                 ASS_ACTUAL,
                 ASS_CLASSI,
                 ST_AsGeoJSON(ST_Force2D(geom)) AS geometry
-            FROM parcel;
+            FROM parcels;
         """
 
         cursor.execute(query)
@@ -112,7 +112,7 @@ def get_parcels():
 
         geojson = {
             "type": "FeatureCollection",
-            "name": "parcel",
+            "name": "parcels",
             "features": features
         }
 
@@ -200,4 +200,3 @@ def get_roads():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
